@@ -1,0 +1,53 @@
+Please see the LICENSE file for license information.
+
+DISCLAIMER
+
+The RACS prototype is a research project and may contain bugs.  Under no
+circumstances should it be used with important data that is not backed up
+elsewhere.  But you knew that.
+
+Additionally, RACS does not currently implement any form of authentication
+from the client's end, meaning anyone will be able to access your RACS proxy
+if it is on an accessible host/port.
+
+RACS was developed on Linux. There's no reason it shouldn't work on other 
+platforms, but we haven't tried it.  Let us know.
+
+INSTALLATION
+
+	0. Requires Python >= 2.5
+
+	1. You'll need to install these third-party Python packages:
+    	   	  lxml       	XML manipulation library
+    	   	  zfec       	Erasure coding library
+    	   	  boto		(needed for Amazon S3 repositories)
+    	   	  cloudfiles 	(needed for Rackspace Cloudfiles repositories)
+
+	2. If you plan on using ZooKeeper (for multi-proxy RACS), you will
+ 	   need to run a ZooKeeper server.
+
+    3. If you have rearranged RACS files, you may need to add the "python"
+       directory to your PYTHONPATH environment variable.
+
+QUICKSTART
+
+	1. Create a configuration file.  
+	   See sample.config for instructions.
+
+	2. To run,  
+	      bin/racs [configfile]
+	 
+	   (or "python.exe bin\racs [configfile]" on Windows)   
+
+KNOWN BUGS
+
+* boto, the Python wrapper for Amazon Web Services, is not thread safe.
+  RACS S3 repositories therefore do not run S3 queries in parallel, making
+  them much slower than they should be. 
+
+SUPPORT? QUESTIONS?
+
+  lonnie@cs.cornell.edu
+  hussam@cs.cornell.edu
+  hweather@cs.cornell.edu
+

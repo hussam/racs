@@ -1,0 +1,7 @@
+
+Boto is a third-party Amazon S3 client library for python.
+http://code.google.com/p/boto/
+
+We have modified it to add the option of using a proxy server.
+
+Boto is licensed under the MIT license.
